@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <footer>
-            Este es el footer del proyecto
+            Este es el footer de la pagina
         </footer>
     );
 }
