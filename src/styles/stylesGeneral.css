@@ -1,8 +1,16 @@
 .navbar {
     background-color: #BC906F;
-    padding: 30px;
+    padding: 10px;
+
 }
 
+
+.logo {
+    height: 100px;
+    display:block;
+    margin: auto;
+
+}
 
 .buttonPrincipal {
     background-color:#BC906F;
@@ -51,11 +59,44 @@
 .mainContainer> main {
     height: 100%;
     overflow-y: scroll;
-    padding-left: 20px;
-    padding-right: 20px;
 }
   
 .mainContainer> footer {
     background-color:#E7E5C1;
-    padding: 20px;
+}
+
+
+.index-section {
+    background-image: url(https://kitpro.site/decor/wp-content/uploads/sites/35/2021/08/armchair-on-empty-wall-YQJ6U9V.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 100%;
+
+}
+
+.section-backgound {
+    display:flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    height: 100%;
+}
+
+
+.section-backgound-colum-50{
+    width: 50%;
+}
+
+.section-backgound-column-50-row-50 {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.section-backgound-title {
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    height: 50%;
+    
 }
