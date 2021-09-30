@@ -1,8 +1,12 @@
 .navbar {
-    background-color: #BC906F;
+    background-color: #772727;
     padding: 30px;
 }
 
+.footer {
+    background-color: #772727;
+    padding: 20px;
+}
 
 .buttonPrincipal {
     background-color:#BC906F;
@@ -46,16 +50,39 @@
     flex-direction: column;
     height: 100vh;
     overflow-y: hidden;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif ;
+    color: rgb(255, 255, 255);
+    
 }
 
 .mainContainer> main {
+    
     height: 100%;
     overflow-y: scroll;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif ;
+    color: rgb(9, 9, 9);
 }
   
 .mainContainer> footer {
-    background-color:#E7E5C1;
-    padding: 20px;
+    background-color:#7e4d19;
+    padding: 2px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif ;
+    color: aliceblue;
+}
+
+.contenedorDivs{
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.contenedorDivsFooter{
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: 50% 50%;
 }
