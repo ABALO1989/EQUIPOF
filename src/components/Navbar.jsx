@@ -1,6 +1,6 @@
 import React from 'react'
 import 'styles/stylesGeneral.css'
-import logo from 'media/MUEBLESTICLOGO.png'
+import logo from 'media/logo.png'
 
 const Navbar = () => {
     return (
