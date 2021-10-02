@@ -1,11 +1,8 @@
-img{
-    height: 350px;
-}
-
 .contLogin{
-    display: inline-block;
+    display: grid;
+    margin: auto;
     justify-items: center;
-    width: 350px;
+    width: 400px;
     border: 2px solid;
     border-radius: 15px;
     border-color: #962929;
@@ -13,12 +10,8 @@ img{
     row-gap: 20px;
 }
 .contIma{
+    height: 350px;
     border: 3px #772727;
-    width: 80%;
-}
-#root{
-    width: 100%;
-    text-align: center;
 }
 .inputsLogin{
     display: grid;

@@ -15,11 +15,15 @@ const Login = () => {
         setPass(event.target.value)
     }
     
-    function capturarDatos() {
-        console.log({ user });
-        console.log({ pass });
+    function ingresoSistema(){
+        if(user==='Mueble' && pass==='Muebles'){
+            console.log('Ingreso Exitoso');
+        }else{
+            console.log('Ingreso errado');
+        }
+    
+    
     }
-
     return (
         <div>
             <div>Muebles Tic</div>
@@ -28,12 +32,11 @@ const Login = () => {
                 <div className="inputsLogin">
                     <TextField id="inputLogin" label="Usuario" onChange={(e) => takeDatUser(e)} variant="outlined" />
                     <TextField id="inputLogin" type="password" onChange={(e) => takeDatPass(e)} label="Password" variant="outlined" />
-                <button className="buttonLogin" type="submit" onClick={() => capturarDatos()}>Ingresar</button>
+                <button className="buttonLogin" type="submit" onClick={() => ingresoSistema()}>Ingresar</button>
                 </div>
             </div>
         </div>
     );
 }
 export default Login
-
 
