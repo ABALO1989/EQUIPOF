@@ -1,0 +1,31 @@
+img{
+    height: 350px;
+}
+
+.contLogin{
+    display: inline-block;
+    justify-items: center;
+    width: 350px;
+    border: 2px solid;
+    border-radius: 15px;
+    border-color: #962929;
+    padding-bottom: 40px;
+    row-gap: 20px;
+}
+.contIma{
+    border: 3px #772727;
+    width: 80%;
+}
+#root{
+    width: 100%;
+    text-align: center;
+}
+.inputsLogin{
+    display: grid;
+    justify-items: center;
+    row-gap: 25px;
+}
+.buttonLogin{
+    
+    justify-items: center;
+}

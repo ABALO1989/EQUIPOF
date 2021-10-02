@@ -1,10 +1,10 @@
 import 'styles/styles.css';
+import React from 'react';
+import Login from './pages/Login';
 
-function App() {
+function App(){
   return (
-    <div > Muebles TIC Equipo F
-      
-    </div>
+      <Login />
   );
 }
 
