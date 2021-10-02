@@ -5,11 +5,7 @@ import logo from 'media/logo.png'
 const Navbar = () => {
     return (
         <div className='navbar'>
-            <img
-                className='logo'
-                src={logo}
-                alt="Logo" />
-
+          
         </div>
     )
 }
