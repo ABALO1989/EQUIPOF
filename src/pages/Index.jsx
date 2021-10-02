@@ -5,6 +5,7 @@ const Index = () => {
         <div>
             <br />
             este es el index
+            <br />
             <button className='buttonPrincipal'>Principal</button> 
             <button className='buttonSecundario'>Secundario</button>
         </div>
