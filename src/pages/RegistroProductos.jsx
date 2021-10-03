@@ -1,4 +1,5 @@
 const RegistroProductos = () => {
+
     return (
         <div>
             <h2>

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./InfoProductos.css"
+
 
 const InfoProductos = () => {
     return (
@@ -7,7 +7,7 @@ const InfoProductos = () => {
             <h1>Productos</h1>
             <div className = "formulario">
                 <form>
-                    <label>Identificador</label>
+                <label>Identificador</label>
                     <input className = "appearance-none focus outline:none" type = "number" placeholder  = "Digite el identificador" required/> 
                     <label>Descripción</label>
                     <input type = "text" placeholder  = "Digite la descripcion" required /> 
