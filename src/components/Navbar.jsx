@@ -1,12 +1,13 @@
 import React from 'react'
 import 'styles/stylesGeneral.css'
+import imagenLogo from 'media/logoMueblesTic.png';
 
 const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='contenedorDivs'>
                 <div >
-                    <img src='src\media\logoMueblesTic.png' alt='Logo MueblesTic'></img>
+                    <img src={imagenLogo} className="imaMain" alt='Logo MueblesTic'></img>
                 </div>
                 <div>
                     <span >Bienvenidos</span>
