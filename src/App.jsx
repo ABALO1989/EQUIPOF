@@ -6,6 +6,7 @@ import NuevaVenta from 'pages/NuevaVenta';
 import AdminVentas from 'pages/AdminVentas';
 import Login from 'pages/Login';
 import 'styles/stylesVentas.css';
+import RegisProduc from 'pages/RegisProduc';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
             <LayoutInicial>
               <AdminVentas />
             </LayoutInicial>
+          </Route>
+          <Route exact path='/productos'>
+            <RegisProduc />
           </Route>
           <Route exact path='/Login'>
             <LayoutLogin>
