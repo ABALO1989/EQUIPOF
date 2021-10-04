@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LayoutInicial from 'layouts/LayoutInicial';
-//import LayoutUsuarios from 'layouts/LayoutUsuarios';
+import LayoutLogin from 'layouts/LayoutLogin';
 import Index from 'pages/Index';
 import NuevaVenta from 'pages/NuevaVenta';
 import AdminVentas from 'pages/AdminVentas';
 import Login from 'pages/Login';
 import 'styles/stylesVentas.css';
+import RegisProduc from 'pages/RegisProduc';
 
 
 function App() {
@@ -13,21 +14,30 @@ function App() {
     <div >
       <Router>
         <Switch>
-          <LayoutInicial>
-            <Route exact path='/nuevaventa'>
+          <Route exact path='/nuevaventa'>
+            <LayoutInicial>
               <NuevaVenta />
-            </Route>
-            <Route exact path='/adminventas'> {/*comentario: crear cada Route para la respectiva pagina */}
+            </LayoutInicial>
+          </Route>
+          <Route exact path='/adminventas'> {/*comentario: crear cada Route para la respectiva pagina */}
+            <LayoutInicial>
               <AdminVentas />
-            </Route>
-            <Route exact path='/Login'>
+            </LayoutInicial>
+          </Route>
+          <Route exact path='/productos'>
+            <RegisProduc />
+          </Route>
+          <Route exact path='/Login'>
+            <LayoutLogin>
               <Login />
-            </Route>
-            <Route exact path='/'>
+            </LayoutLogin>
+          </Route>
+          <Route exact path='/'>
+            <LayoutInicial>
               <Index />
-            </Route>
+            </LayoutInicial>
+          </Route>
 
-          </LayoutInicial>
         </Switch>
       </Router>
 

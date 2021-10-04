@@ -1,19 +1,13 @@
 .navbar {
-<<<<<<< HEAD
-    background-color: #BC906F;
-    padding: 30px;
-}
-
-=======
     background-color: #772727;
-    padding: 30px;
+    padding: 15px;
 }
 
 .footer {
     background-color: #772727;
-    padding: 20px;
+    padding: 8px;
+    font-size: 18px;
 }
->>>>>>> 7f4a0ef359a67543692d3826aea1b6723bd30798
 
 .buttonPrincipal {
     background-color:#BC906F;
@@ -31,6 +25,7 @@
     background-color: white;
     color: #BC906F;
     border-color: #BC906F;
+    font-weight: bold;
 }
 
 .buttonSecundario {
@@ -57,33 +52,16 @@
     flex-direction: column;
     height: 100vh;
     overflow-y: hidden;
-<<<<<<< HEAD
-}
-
-.mainContainer> main {
-=======
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif ;
     color: rgb(255, 255, 255);
-    
 }
 
 .mainContainer> main {
-    
->>>>>>> 7f4a0ef359a67543692d3826aea1b6723bd30798
     height: 100%;
     overflow-y: scroll;
     padding-left: 20px;
     padding-right: 20px;
-<<<<<<< HEAD
-}
-
-.mainContainer> footer {
-    background-color:#E7E5C1;
-    padding: 20px;
-}
- 
-=======
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif ;
     color: rgb(9, 9, 9);
@@ -92,7 +70,6 @@
 .mainContainer> footer {
     background-color:#7e4d19;
     padding: 2px;
-    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif ;
     color: aliceblue;
 }
@@ -100,15 +77,20 @@
 .contenedorDivs{
     display: grid;
     grid-column: auto;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 15rem 12rem 13rem 13rem 14rem 14rem ;
 }
 
 .contenedorDivsFooter{
     display: grid;
     grid-column: auto;
     grid-template-columns: 50% 50%;
+    
 }
 .imaMain{
-    width: 50%;
+    width: 40%;
 }
->>>>>>> 7f4a0ef359a67543692d3826aea1b6723bd30798
+.centrarContBloque{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}

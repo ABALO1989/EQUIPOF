@@ -1,10 +1,6 @@
 
 const Footer = () => {
     return (
-<<<<<<< HEAD
-        <footer>
-            Este es el footer de la pagina
-=======
         <footer >
             <div className='footer'>
                 <div className='contenedorDivsFooter'>
@@ -16,7 +12,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
->>>>>>> 7f4a0ef359a67543692d3826aea1b6723bd30798
         </footer>
     );
 }
