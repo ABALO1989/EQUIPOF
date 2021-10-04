@@ -48,7 +48,7 @@ const RegisProduc = () => {
                                         <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="'ID Producto o Descripcion'" />
 
                                         <div class="p-4">
-                                            <button class="bg-red-700 text-white rounded-full p-2 hover:bg-red-800 focus:outline-none w-12 h-12 flex items-center justify-center">
+                                            <button class="bg-red-700 text-white rounded-full p-2 font-bold hover:bg-red-800 focus:outline-none w-12 h-12 flex items-center justify-center">
                                                 Buscar
                                             </button>
                                         </div>
