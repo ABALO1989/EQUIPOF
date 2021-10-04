@@ -6,6 +6,7 @@ import NuevaVenta from 'pages/NuevaVenta';
 import AdminVentas from 'pages/AdminVentas';
 import Login from 'pages/Login';
 import 'styles/stylesVentas.css';
+import RegisProduc from 'pages/RegisProduc';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route exact path='/adminventas'> {/*comentario: crear cada Route para la respectiva pagina */}
               <AdminVentas />
+            </Route>
+            <Route exact path='/productos'>
+              <RegisProduc />
             </Route>
             <Route exact path='/Login'>
               <Login />
