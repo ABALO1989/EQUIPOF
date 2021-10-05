@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .navbar {
     background-color: #772727;
     padding: 15px;
@@ -7,6 +12,13 @@
     background-color: #772727;
     padding: 8px;
     font-size: 18px;
+}
+
+.logo {
+    height: 100px;
+    display:block;
+    margin: auto;
+
 }
 
 .buttonPrincipal {
@@ -94,3 +106,11 @@
     justify-items: center;
     align-items: center;
 }
+
+.sidebar ul li {
+    color:white;
+    text-align: center;
+    border-bottom: 1em solid rgb(255, 252, 252) ;
+}
+
+
