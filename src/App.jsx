@@ -24,9 +24,11 @@ function App() {
               <AdminVentas />
             </LayoutInicial>
           </Route>
+          <LayoutInicial>
           <Route exact path='/productos'>
             <RegisProduc />
           </Route>
+          </LayoutInicial>
           <Route exact path='/Login'>
             <LayoutLogin>
               <Login />
