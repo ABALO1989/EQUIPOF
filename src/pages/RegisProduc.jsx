@@ -9,12 +9,14 @@ const dataProductos = [
     { id: 103, descripcion: "Mueble sala", valor: 350000, estado: " Disponible" }
 ]
 
+
 const RegisProduc = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [muebles, setMuebles] = useState([]);
     const [textoBoton, setTextoBoton] = useState('Crear Nuevo Mueble');
     const [colorBoton, setColorBoton] = useState('indigo');
-   
+    const [mostrarEditar, setMostrarEditar] = useState(true);
+
 
     useEffect(() => {
         //obtener lista de vehículos desde el backend
@@ -79,12 +81,25 @@ const RegisProduc = () => {
                     />
                 )
             }
+
+            {
+                mostrarEditar ? (
+                    <div/>
+                ) : (
+                    <FormularioModificacionMuebles
+                        setMostrarTabla={setMostrarTabla}
+                        listaMuebles={muebles}
+                        setMuebles={setMuebles}
+                    />
+                )
+            }
             <ToastContainer position='bottom-center' autoClose={5000} />
         </div >
     )
 }
 
-const TablaMuebles = ({ listaMuebles }, editRow = { editRow }) => {
+const TablaMuebles = ({ listaMuebles,verEditar, mostrarEditar }, editRow = { editRow }) => {
+   
     useEffect(() => {
         console.log('este es el listado de muebles en el componente de tabla', listaMuebles);
     }, [listaMuebles]);
@@ -109,11 +124,13 @@ const TablaMuebles = ({ listaMuebles }, editRow = { editRow }) => {
                                 <td className="border border-gray-500 bg-gray-200 px-6 p-2">{producto.descripcion}</td>
                                 <td className="border border-gray-500 bg-gray-200 px-6 p-2">{producto.valor}</td>
                                 <td className="border border-gray-500 bg-gray-200 px-6 p-2">{producto.estado}</td>
-                                <td className="border border-gray-500 bg-gray-200 px-6 p-2"><button
+                                <td className="border border-gray-500 bg-gray-200 px-6 p-2"><button onClick={() => {
+                                    verEditar(!mostrarEditar);
+                                }}
                                     className="border-2 border-red-700 hover:border-red-900 rounded-full p-2">
                                     Editar</button>
-                                 </td>   
-                                   
+                                </td>
+
                             </tr>
                         );
                     })}
@@ -201,5 +218,81 @@ const FormularioCreacionMuebles = ({ setMostrarTabla, listaMuebles, setMuebles }
         </div>
     );
 };
+const FormularioModificacionMuebles = ({ setMostrarTabla, listaMuebles, setMuebles }) => {
+    const form = useRef(null);
 
+    const submitForm = (e) => {
+        e.preventDefault();
+        const fd = new FormData(form.current);
+
+        const nuevoMueble = {};
+        fd.forEach((value, key) => {
+            nuevoMueble[key] = value;
+        });
+
+        setMostrarTabla(true);
+        setMuebles([...listaMuebles, nuevoMueble]);
+        // identificar el caso de éxito y mostrar un toast de éxito
+        toast.success('Mueble agregado con éxito');
+        // identificar el caso de error y mostrar un toast de error
+        //toast.error('Error creando un mueble');
+    };
+
+    return (
+        <div>
+            <h2 className='text-2xl font-extrabold text-gray-800'>Crear nuevo mueble</h2>
+            <form ref={form} onSubmit={submitForm} className='flex flex-col'>
+                <label className='flex flex-col' htmlFor='id'>
+                    Identificador del mueble
+                    <input
+                        name='id'
+                        className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+                        type='number'
+                        placeholder='identificador producto'
+                        required
+                    />
+                </label>
+                <label className='flex flex-col' htmlFor='descripcion'>
+                    Descripción del mueble
+                    <input
+                        className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+                        name='descripcion'
+                        type="text"
+                        placeholder='Nombre producto'
+                        required
+
+                    />
+                    <label className='flex flex-col' htmlFor='valor'>
+                        Valor del mueble
+                        <input
+                            name='valor'
+                            className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+                            type='number'
+                            placeholder='Precio producto'
+                            required
+                        />
+                    </label>
+                    <label className='flex flex-col' htmlFor='estado'>
+                        Estado del mueble
+                        <input
+                            name='estado'
+                            className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+                            type='txt'
+                            placeholder='Disponible o no disponible'
+                            required
+                        />
+                    </label>
+
+                </label>
+
+                <button
+                    type='submit'
+                    className='col-span-2 bg-yellow-500 p-2 rounded-full shadow-md hover:bg-yellow-600 text-white font-bold m-5'
+                >
+                    Guardar mueble
+                </button>
+            </form>
+        </div>
+    );
+};
 export default RegisProduc;
