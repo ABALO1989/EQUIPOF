@@ -20,7 +20,7 @@ creo una variable en un ARRAY com esta en la linea 8*, luego creo una
 funcion que va a devolver el valor de dicho campo*. 2. otra forma mas simple es como esta en la linea 30, 
 creo la funcion en el mismo onChange con los mismos pasos*/}
 
-  const cambioIDVehiculo = (e) => {
+  const cambioIDVenta = (e) => {
     setIDVenta(e.target.value);
   }
 
@@ -38,8 +38,8 @@ creo la funcion en el mismo onChange con los mismos pasos*/}
       <div className="flex text-center">
         <div className="w-1/2 pl-20 pr-20 pt-10 pb-10 ">
           <form className='flex flex-col'>
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' onChange={cambioIDVehiculo} type="text" placeholder='ID Venta' />
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' onChange={(e) => { setFechaVenta(e.target.value); }} type="date" placeholder='Fecha de Venta' />
+            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' onChange={cambioIDVenta} type="text" placeholder='ID Venta' />
+            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' onChange={(e) => { setFechaVenta(e.target.value); }} value= {FechaVenta}type="date" placeholder='Fecha de Venta' />
             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Valor Total de la Venta' />
           </form>
         </div>
