@@ -38,19 +38,15 @@ creo la funcion en el mismo onChange con los mismos pasos*/}
       <div className="flex text-center">
         <div className="w-1/2 pl-20 pr-20 pt-10 pb-10 ">
           <form className='flex flex-col'>
-            <h4 className='font-bold text-red-900'>Datos Generales</h4>
             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' onChange={cambioIDVehiculo} type="text" placeholder='ID Venta' />
             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' onChange={(e) => { setFechaVenta(e.target.value); }} type="date" placeholder='Fecha de Venta' />
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='ID Cliente' />
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Nombre Cliente' />
+            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Valor Total de la Venta' />
           </form>
         </div>
         <div className="w-1/2 pl-20 pr-20 pt-10 pb-10">
           <form className='flex flex-col'>
-            <h4 className='font-bold text-red-900'>Resumen</h4>
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Subtotal' />
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Total Impuestos' />
-            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Valor Total de la Venta' />
+            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='ID Cliente' />
+            <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Nombre Cliente' />
             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Vendedor' />
           </form>
         </div>
@@ -60,37 +56,29 @@ creo la funcion en el mismo onChange con los mismos pasos*/}
           <thead>
             <tr className='bg-yellow-50'>
               <th className='font-bold text-red-900'>Codigo</th>
-              <th className='font-bold text-red-900'>Unidad</th>
               <th className='font-bold text-red-900'>Cantidad</th>
               <th className='font-bold text-red-900'>Precio Unitario</th>
-              <th className='font-bold text-red-900'>IVA</th>
-              <th className='font-bold text-red-900'> Valor Total</th>
+              <th className='font-bold text-red-900'> Valor</th>
             </tr>
           </thead>
           <tbody >
             <tr>
               <td><input type="text" placeholder='Codigo' /></td>
-              <td><input type="text" placeholder='Unidad' /></td>
               <td><input type="number" placeholder='Cantidad' /></td>
               <td><input type="text" placeholder='Precio Unitario' /></td>
-              <td><input type="number" placeholder='IVA' /></td>
-              <td><input type="text" placeholder='Valor Total' /></td>
+              <td><input type="text" placeholder='Valor' /></td>
             </tr>
             <tr>
               <td><input type="text" placeholder='Codigo' /></td>
-              <td><input type="text" placeholder='Unidad' /></td>
               <td><input type="number" placeholder='Cantidad' /></td>
               <td><input type="text" placeholder='Precio Unitario' /></td>
-              <td><input type="number" placeholder='IVA' /></td>
-              <td><input type="text" placeholder='Valor Total' /></td>
+              <td><input type="text" placeholder='Valor' /></td>
             </tr>
             <tr>
               <td><input type="text" placeholder='Codigo' /></td>
-              <td><input type="text" placeholder='Unidad' /></td>
               <td><input type="number" placeholder='Cantidad' /></td>
               <td><input type="text" placeholder='Precio Unitario' /></td>
-              <td><input type="number" placeholder='IVA' /></td>
-              <td><input type="text" placeholder='Valor Total' /></td>
+              <td><input type="text" placeholder='Valor' /></td>
             </tr>
           </tbody>
         </table>
