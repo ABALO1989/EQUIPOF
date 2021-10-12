@@ -4,16 +4,49 @@ import { Link } from 'react-router-dom';
 import editar from 'media/editar.png'
 
 
+const ventasBackend =[
+    {
+        IDVenta:'FV-01',
+        Fecha: '01/04/2020',
+        IDCliente: '1111',
+        NombreCliente: 'Pepito Perez',
+        ValorTotal: '500.000',
+        Vendedor: 'Juan'
+    },
+    {
+        IDVenta:'FV-02',
+        Fecha: '15/04/2020',
+        IDCliente: '1122',
+        NombreCliente: 'Juanito Hoyos',
+        ValorTotal: '700.000',
+        Vendedor: 'Pedro'
+    },
+    {
+        IDVenta:'FV-03',
+        Fecha: '18/09/2020',
+        IDCliente: '1133',
+        NombreCliente: 'Martin Sanchez',
+        ValorTotal: '800.000',
+        Vendedor: 'Pedro'
+    },
 
+]
 
 const Ventas = () => {
-
+ 
     const [BuscarVenta, setBuscarVenta] = useState(true);
-    const [textoBoton, setTextoBoton] = useState('Registrar Venta');
+    const [textoBoton, setTextoBoton] = useState('Nueva Venta');
+    const [ventasRegistradas, setVentasRegistradas] = useState ([]);
+    
+    useEffect (() => {
+        //obtener lista de ventas del backend
+        setVentasRegistradas(ventasBackend);
+
+    }, []);
 
     useEffect(() => {
         if(BuscarVenta){
-            setTextoBoton('Registrar Venta')
+            setTextoBoton('Nueva Venta')
         } else{
             setTextoBoton('Mostrar Todas las ventas')
         }
@@ -22,16 +55,23 @@ const Ventas = () => {
 
     return (
         <div >
-            <h2 className='text-center font-extrabold text-red-900'>ADMINISTRACION DE VENTAS </h2>
+            <h1 className='text-center font-extrabold text-red-900 pt-12'>MODULO DE VENTAS </h1>
+            
+            {BuscarVenta ? (
+            <AdministrarVentas listaVentas={ventasRegistradas}/>
+            ): (
+            <NuevaVenta/>)
+            }
+            <div className='flex flex-col items-center'>
             <button 
              onClick={()=>{
                 setBuscarVenta(!BuscarVenta); 
             }}
-                className='buttonPrincipal'>
+                className='buttonPrincipal '>
                 {textoBoton}
 
             </button>
-            {BuscarVenta ? <administrarVentas/>:<nuevaVenta/>}
+            </div>
             
         </div>
 
@@ -42,7 +82,11 @@ const Ventas = () => {
 
 
 
-const nuevaVenta = () => {
+const NuevaVenta = () => {
+
+    const [mostrarCamposAdicionales, setMostrarCamposAdicionales] = useState (false);
+
+
     return (
         <div>
             <div className='flex h-full w-full flex-col items-center justify-start p-8'>
@@ -96,13 +140,28 @@ const nuevaVenta = () => {
                     </table>
                 </div>
                 <div>
-                    <Link className='flex p-5'>
-                        <img className='w-6' src={mas} alt="mas" />
-                    </Link>
+                    <button  
+                    onClick = {() => setMostrarCamposAdicionales (!mostrarCamposAdicionales)}
+                    className='flex p-5'>
+                        <img className= 'w-5' src={mas} alt="más" />
+                        
+                    </button>
+
+                    {mostrarCamposAdicionales &&
+                    <div>
+                      <div>
+                      <td><input type="text" placeholder='Codigo' /></td>
+                                <td><input type="number" placeholder='Cantidad' /></td>
+                                <td><input type="text" placeholder='Precio Unitario' /></td>
+                                <td><input type="text" placeholder='Valor' /></td>
+            </div>
+                    </div>
+
+                    }
                 </div>
-                <div className='flex space-x-7 pt-10 pb-10'>
-                    <button className='buttonSecundario'>Ver Ventas</button>
-                    <button className='buttonPrincipal'>Registrar Venta</button>
+
+                <div className='pt-10 pb-10'>
+                    <button className='buttonPrincipal'>Guardar Venta</button>
                 </div>
             </div>
 
@@ -111,7 +170,12 @@ const nuevaVenta = () => {
     );
 };
 
-const administrarVentas = () => {
+const AdministrarVentas = ({listaVentas}) => {
+    
+    useEffect(() => {
+        console.log ('Este es el listado de vehiculos en el componnete de adminVentas', listaVentas)
+    }, [listaVentas]);
+    
     return (
         <div>
             <div className='flex h-full w-full flex-col items-center justify-start p-8'>
@@ -121,13 +185,11 @@ const administrarVentas = () => {
                     <div className="w-1/2 pl-10 pr-10 pt-10 pb-10 ">
                         <form className='flex flex-col'>
                             <label>Fecha Inicial <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="date" /></label>
-                            <label>Cliente<input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="select" /></label>
-                            <label>ID Cliente<input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" /></label>
+                            <label>ID Venta<input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" /></label>
                         </form>
                     </div>
                     <div className="w-1/2 pl-10 pr-10 pt-10 pb-10 ">
                         <form className='flex flex-col'>
-                            <label>Fecha Inicial <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="date" /></label>
                             <label>Fecha Final <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="date" /></label>
                             <label>Cliente<input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" /></label>
                         </form>
@@ -151,39 +213,27 @@ const administrarVentas = () => {
                             </tr>
                         </thead>
                         <tbody >
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td className='items-center'>
-                                    <Link className='flex p-5'>
-                                        <img className='w-5' src={editar} alt="mas" />
-                                    </Link>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
+                            {listaVentas.map((ventasRegistradas)=>{
+                                return (
+                                    <tr className='text-center'>
+                                    <td>{ventasRegistradas.IDVenta}</td>
+                                    <td>{ventasRegistradas.Fecha}</td>
+                                    <td>{ventasRegistradas.IDCliente}</td>
+                                    <td>{ventasRegistradas.NombreCliente}</td>
+                                    <td>{ventasRegistradas.ValorTotal}</td>
+                                    <td>{ventasRegistradas.Vendedor}</td>
+                                    <td className='items-center'>
+                                        <Link className='flex p-5'>
+                                            <img className='w-5' src={editar} alt="mas" />
+                                        </Link>
+                                    </td>
+                                </tr>
+                                
+                                )
+                            })}
+                             </tbody>
                     </table>
+ 
                 </div>
             </div>
 
