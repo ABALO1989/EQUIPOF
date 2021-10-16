@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GestionUsuarios from 'pages/GestionUsuarios';
 import LayoutInicial from 'layouts/LayoutInicial';
 
-
-
 function App() {
   return (
-      
+     
       <Router>
         <div>
         <Switch>
@@ -19,6 +17,7 @@ function App() {
         </Switch>
         </div>
       </Router>
+
 
   );
 }
