@@ -14,7 +14,7 @@ function App() {
           <Route path={['/adminventas']}> {/*comentario: agregar separado por comas, las rutas que llevan este layout, son todas exepto el login */}
             <LayoutUsuarios>
               <Switch>
-                <Route path='/adminventas'> {/*comentario: crear cada Route para la respectiva pagina */}
+                <Route path='/adminventas'> {/*comentario: crearr cada Route para la respectiva pagina */}
                   <AdminVentas />
                 </Route>
               </Switch>
