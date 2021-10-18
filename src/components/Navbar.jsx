@@ -3,6 +3,7 @@ import 'styles/stylesGeneral.css'
 import imagenLogo from 'media/logoMueblesTic.png';
 import TextField from '@material-ui/core/TextField';
 /*import SearchIcon from '@mui/icons-material/Search';*/
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -21,14 +22,16 @@ const Navbar = () => {
                     <span >Portafolio</span>
                 </div>
                 <div className="centrarContBloque">
-                    <TextField id="buscarProducto" label="Producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary"/>
-                    
+                    <TextField id="buscarProducto" label="Producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary" />
+
                 </div>
                 <div className="centrarContBloque">
-                    <button className='buttonPrincipal'>Inicio de sesión</button> 
+                    <Link to="/Login">
+                        <button className='buttonPrincipal'>Inicio de sesión</button>
+                    </Link>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
