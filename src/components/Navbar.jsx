@@ -1,27 +1,37 @@
 import React from 'react'
 import 'styles/stylesGeneral.css'
+import imagenLogo from 'media/logoMueblesTic.png';
+import TextField from '@material-ui/core/TextField';
+/*import SearchIcon from '@mui/icons-material/Search';*/
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='contenedorDivs'>
-                <div >
-                    <img src='src\media\logoMueblesTic.png' alt='Logo MueblesTic'></img>
+                <div className="centrarContBloque">
+                    <img src={imagenLogo} className="imaMain" alt='Logo MueblesTic'></img>
                 </div>
-                <div>
+                <div className="centrarContBloque">
                     <span >Bienvenidos</span>
                 </div>
-                <div >
+                <div className="centrarContBloque">
                     <span>Servicios</span>
                 </div>
-                <div >
+                <div className="centrarContBloque">
                     <span >Portafolio</span>
                 </div>
-                <div >
-                    <button className='buttonPrincipal'>Inicio de sesión</button> 
+                <div className="centrarContBloque">
+                    <TextField id="buscarProducto" label="Producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary" />
+
+                </div>
+                <div className="centrarContBloque">
+                    <Link to="/Login">
+                        <button className='buttonPrincipal'>Inicio de sesión</button>
+                    </Link>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

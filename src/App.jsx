@@ -1,40 +1,49 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LayoutInicial from 'layouts/LayoutInicial';
-import LayoutUsuarios from 'layouts/LayoutUsuarios';
+import LayoutLogin from 'layouts/LayoutLogin';
 import Index from 'pages/Index';
 import NuevaVenta from 'pages/NuevaVenta';
 import AdminVentas from 'pages/AdminVentas';
+import Login from 'pages/Login';
 import 'styles/stylesVentas.css';
+import RegisProduc from 'pages/RegisProduc';
 
 
 function App() {
   return (
-    <div > 
-       <Router>
+    <div >
+      <Router>
         <Switch>
-          <Route path={['/nuevaventa', '/adminventas']}> {/*comentario: agregar separado por comas, las rutas que llevan este layout, son todas exepto el login */}
-            <LayoutUsuarios>
-              <Switch>
-                <Route path='/nuevaventa'>
-                  <NuevaVenta />
-                </Route>
-                <Route path='/adminventas'> {/*comentario: crear cada Route para la respectiva pagina */}
-                  <AdminVentas />
-                </Route>
-              </Switch>
-            </LayoutUsuarios>
-          </Route>
-          <Route path={['/']}>
+          <Route exact path='/nuevaventa'>
             <LayoutInicial>
-              <Route path='/'>
-                <Index />
-              </Route>
+              <NuevaVenta />
             </LayoutInicial>
           </Route>
+          <Route exact path='/adminventas'> {/*comentario: crear cada Route para la respectiva pagina */}
+            <LayoutInicial>
+              <AdminVentas />
+            </LayoutInicial>
+          </Route>
+          <Route exact path='/productos'>
+            <LayoutInicial>
+              <RegisProduc />
+            </LayoutInicial>
+          </Route>
+          <Route exact path='/Login'>
+            <LayoutLogin>
+              <Login />
+            </LayoutLogin>
+          </Route>
+          <Route exact path='/'>
+            <LayoutInicial>
+              <Index />
+            </LayoutInicial>
+          </Route>
+
         </Switch>
       </Router>
-    
-      
+
+
     </div>
   );
 }
