@@ -28,7 +28,7 @@ export const crearVenta = async (data, successCallback, errorCallback) => {
 export const editarVenta = async (id, data, successCallback, errorCallback) => {
   const options = {
     method: 'PATCH',
-    url: `http://localhost:5000/ventas/${id}/`,
+    url: 'http://localhost:5000/ventas/${id}/',
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
     data,
   };
@@ -38,7 +38,7 @@ export const editarVenta = async (id, data, successCallback, errorCallback) => {
 export const eliminarVenta = async (id, successCallback, errorCallback) => {
   const options = {
     method: 'DELETE',
-    url: `http://localhost:5000/ventas/${id}/`,
+    url: 'http://localhost:5000/ventas/${id}/',
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
   };
   await axios.request(options).then(successCallback).catch(errorCallback);

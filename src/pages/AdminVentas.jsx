@@ -73,8 +73,10 @@ const Ventas = () => {
                     setMostrarTabla={setMostrarTabla}
                     listaVentas={ventas}
                     setVentas={setVentas}
-                />)
-            }
+                />
+                )}
+                 <ToastContainer position='bottom-center' autoClose={5000} />
+                
             <div className='flex flex-col items-center'>
                 <button
                     onClick={() => {
@@ -118,10 +120,9 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
                     value={busqueda}
                     onChange={(e) => setBusqueda(e.target.value)}
                     placeholder='Buscar'
-                    className='border-2 border-gray-700 px-3 py-1 self-start rounded-md focus:outline-none focus:border-indigo-500'
+                    className='border-2 border-gray-700 px-3 py-1 mx-7 self-start rounded-md focus:outline-none focus:border-indigo-500'
                 />
-                <h2 className='text-2xl font-extrabold text-gray-800'>Todas las ventas</h2>
-                <div className='hidden md:flex w-full'>
+                <div className='md:flex w-full'>
                     <table className='tabla'>
                         <thead>
                             <tr className='bg-yellow-50 '>
@@ -146,7 +147,7 @@ const TablaVentas = ({ listaVentas, setEjecutarConsulta }) => {
                             })}
                         </tbody>
                     </table>
-                    )
+                    
 
                 </div>
 
@@ -352,7 +353,7 @@ const FilaVenta = ({ ventas, setEjecutarConsulta }) => {
 };
 
 
-const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) => {
+const FormularioCreacionVentas = ({setMostrarTabla}) => {
 
     const form = useRef(null);
 
@@ -394,16 +395,14 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
         <div>
             <div className='flex h-full w-full flex-col items-center justify-start p-8'>
                 <h2 className='text-center font-extrabold text-red-900'>REGISTRO DE VENTA </h2>
-                <div className="flex text-center">
+                <div className="flex flex-col text-center">
                 <form ref={form} onSubmit= {submitForm} className='flex flex-col'>
-                    <div className="w-1/2 pl-20 pr-20 pt-10 pb-10 ">
                             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1'  type="text" placeholder='ID Venta' />
                             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="date" placeholder='Fecha de Venta' />
                             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Valor Total de la Venta' />
                             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='ID Cliente' />
                             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Nombre Cliente' />
                             <input className='border-b-2 border-gray-600  p-2 rounded-md m-1' type="text" placeholder='Vendedor' />
-                 </div>
                  
                 <div className='flex flex-col'>
                     <table>
