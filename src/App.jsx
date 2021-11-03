@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LayoutInicial from 'layouts/LayoutInicial';
 import LayoutUsuarios from 'layouts/LayoutUsuarios';
 import Index from 'pages/Index';
-import AdminVentas from 'pages/AdminVentas';
+import Ventas from 'pages/ventas';
 import 'styles/stylesVentas.css';
 
 
@@ -11,11 +11,11 @@ function App() {
     <div > 
        <Router>
         <Switch>
-          <Route path={['/adminventas']}> {/*comentario: agregar separado por comas, las rutas que llevan este layout, son todas exepto el login */}
+          <Route path={['/ventas']}> {/*comentario: agregar separado por comas, las rutas que llevan este layout, son todas exepto el login */}
             <LayoutUsuarios>
               <Switch>
-                <Route path='/adminventas'> {/*comentario: crearr cada Route para la respectiva pagina */}
-                  <AdminVentas />
+                <Route path='/ventas'> {/*comentario: crearr cada Route para la respectiva pagina */}
+                  <Ventas />
                 </Route>
               </Switch>
             </LayoutUsuarios>
