@@ -10,21 +10,20 @@ const Navbar = () => {
         <div className='navbar'>
             <div className='contenedorDivs'>
                 <div className="centrarContBloque">
-                    <Link to="/">
+                    <Link to="/" >
                         <img src={imagenLogo} className="imaMain" alt='Logo MueblesTic'></img>
                     </Link>
                 </div>
-                
                 <div className="centrarContBloque">
-                    <span>Bienvenidos</span>
-                </div>
-
-                <div className="centrarContBloque">
-                    <Link to="/nuevaventa">
-                        <span>Servicios</span>
+                    <Link to="/">
+                        <span>Inicio</span>
                     </Link>
                 </div>
-
+                <div className="centrarContBloque">
+                    <Link to="/nuevaventa">
+                        <span>Registro de ventas</span>
+                    </Link>
+                </div>
                 <div className="centrarContBloque">
                     <Link to="/productos">
                         <span >Portafolio</span>
@@ -32,7 +31,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="centrarContBloque">
-                    <TextField id="buscarProducto" label="Producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary" />
+                    <TextField id="buscarProducto" label="Buscar producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary" />
                 </div>
 
                 <div className="centrarContBloque">

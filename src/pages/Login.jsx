@@ -7,6 +7,11 @@ import GoogleLogin from 'react-google-login';
 //import { useGoogleLogin } from 'react-google-login';
 
 
+//adiciones
+import 'styles/stylesGeneral.css'
+import { Link } from "react-router-dom";
+
+
 const Login = () => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
@@ -63,6 +68,11 @@ const Login = () => {
 
     return (
         <div className="contLogin">
+            <div className="tituloLogin">
+                <Link to="/">
+                    <Button variant="outlined" type="submit" color="Secondary">Volver</Button>
+                </Link>
+            </div>
             <div className="tituloLogin">MUEBLES TIC</div>
             <img src={iconoLogin} className="contIma" alt="IconoIngreso" />
             <div className="inputsLogin">
