@@ -16,12 +16,18 @@ const Navbar = () => {
                 </div>
                 
                 <div className="centrarContBloque">
-                    <span >Bienvenidos</span>
+                    <Link to="/">
+                        <span>Inicio</span>
+                    </Link>
                 </div>
-
+                <div className="centrarContBloque">
+                    <Link to="/">
+                        <span>Servicios</span>
+                    </Link>
+                </div>
                 <div className="centrarContBloque">
                     <Link to="/nuevaventa">
-                        <span>Servicios</span>
+                        <span>Registro de ventas</span>
                     </Link>
                 </div>
 
@@ -32,7 +38,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="centrarContBloque">
-                    <TextField id="buscarProducto" label="Producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary" />
+                    <TextField id="buscarProducto" label="Buscar producto" /*onChange={(e) => takeDatUser(e)}*/ variant="outlined" color="secondary" />
                 </div>
 
                 <div className="centrarContBloque">
