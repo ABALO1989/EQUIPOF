@@ -2,8 +2,6 @@ import React from 'react'
 import 'styles/stylesGeneral.css'
 import imagenLogo from 'media/instagram.png';
 import imagenLogo2 from 'media/face.png';
-import TextField from '@material-ui/core/TextField';
-/*import SearchIcon from '@mui/icons-material/Search';*/
 import { Link } from "react-router-dom";
 
 const Footer = () => {
