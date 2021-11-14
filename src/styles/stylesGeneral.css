@@ -89,13 +89,13 @@
 .contenedorDivs{
     display: grid;
     grid-column: auto;
-    grid-template-columns: 15rem 12rem 13rem 13rem 14rem 14rem ;
+    grid-template-columns: 15rem 15rem 15rem 15rem 15rem 15rem 25rem;
 }
 
 .contenedorDivsFooter{
     display: grid;
     grid-column: auto;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 20% 5% 5%;
     
 }
 .imaMain{
@@ -107,6 +107,11 @@
     align-items: center;
 }
 
+.ubicacionIzquierda{
+    justify-items: left;
+    align-items: left;
+}
+
 .sidebar ul li {
     color:white;
     text-align: center;
@@ -115,4 +120,15 @@
 
 .mainLogin {
     padding-top: 30px;
+}
+
+.Carousel img{
+    height: 100%;
+    width: 100%;
+}
+
+.Carousel{
+    height: 600px;
+    width: 600px;
+    margin: auto;
 }
