@@ -16,7 +16,7 @@ const Navbar = () => {
                 </div>
                 
                 <div className="centrarContBloque">
-                    <span >Bienvenidos</span>
+                    <span>Bienvenidos</span>
                 </div>
 
                 <div className="centrarContBloque">
